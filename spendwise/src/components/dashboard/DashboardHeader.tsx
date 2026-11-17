@@ -12,7 +12,7 @@ export default function DashboardHeader({
   email,
 }: DashboardHeaderProps) {
   return (
-    <header className="flex min-h-20 items-center justify-between border-b border-slate-200 bg-white px-5 sm:px-8">
+    <header className="sticky top-0 z-30 flex min-h-20 items-center justify-between border-b border-slate-200 bg-white pl-16 pr-5 sm:px-8">
       <div>
         <h2 className="text-lg font-semibold text-slate-900">
           Overview

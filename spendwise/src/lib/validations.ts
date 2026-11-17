@@ -33,5 +33,22 @@ export const loginSchema = z.object({
     .max(64, "Invalid email or password."),
 });
 
+export const transactionSchema = z.object({
+  type: z.enum(["income", "expense"]),
+  amount: z.number().positive("Amount must be greater than zero."),
+  description: z
+    .string()
+    .trim()
+    .min(2, "Description must contain at least 2 characters.")
+    .max(200, "Description cannot exceed 200 characters."),
+  category: z
+    .string()
+    .trim()
+    .min(2, "Please select a category.")
+    .max(50, "Category cannot exceed 50 characters."),
+  date: z.coerce.date(),
+});
+
 export type RegisterInput = z.infer<typeof registerSchema>;
 export type LoginInput = z.infer<typeof loginSchema>;
+export type TransactionInput = z.infer<typeof transactionSchema>;
