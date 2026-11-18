@@ -1,5 +1,4 @@
-
-import mongoose, { Schema, models, model, Types } from "mongoose";
+import { Schema, models, model, Types } from "mongoose";
 
 export interface ITransaction {
   userId: Types.ObjectId;

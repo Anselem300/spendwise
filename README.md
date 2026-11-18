@@ -21,7 +21,7 @@ The application will include the following features:
 - **Dashboard:** Users can view their total income, total expenses, and remaining balance.
 - **Transaction History:** Users can view their previous income and expense transactions.
 - **Transaction Filtering:** Users can filter transactions by category or date.
-- **Expense Charts (Optional):** Users can view a simple chart showing expenses by category.
+- **Expense Category Breakdown (Week 3):** The dashboard displays a bar chart of expenses by category, with totals and percentages.
 
 ## Technologies
 
@@ -38,7 +38,18 @@ The project will use the following technologies:
 
 ## Project Development
 
-The project will be developed over a four-week period. Development will focus on implementing the essential expense-tracking features first, followed by interface improvements, testing, and deployment.
+The project will be developed over a five-week period. Development will focus on implementing the essential expense-tracking features first, followed by interface improvements, testing, and deployment.
+
+### Five-week delivery plan
+
+- **Week 1:** Project setup, requirements, database and authentication foundations.
+- **Week 2:** Income/expense creation and management, dashboard, and history.
+- **Week 3:** Category-based spending insights, data-loading improvements, and focused tests.
+- **Week 4 (planned):** End-to-end testing, input-validation review, and UI refinement.
+- **Week 5 (planned):** Deployment, final testing, documentation, and project handover.
+
+The week labels describe planned increments; use the sprint records and commit
+history as evidence of actual completion.
 
 ## Favorite Quote
 

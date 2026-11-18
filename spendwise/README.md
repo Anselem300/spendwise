@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SpendWise application
 
-## Getting Started
+SpendWise is a personal finance web app built with Next.js (App Router), React,
+TypeScript, Tailwind CSS, Mongoose/MongoDB, and JWT-based authentication.
 
-First, run the development server:
+## Quick start
+
+1. Install Node.js **22** (recommended for the included standalone calculation tests).
+2. From this `spendwise/` directory, run `npm ci`.
+3. Copy `.env.example` to `.env.local` and replace `MONGODB_URI` and `JWT_SECRET`.
+   The JWT secret must be at least 32 characters. Do not commit `.env.local`.
+4. Run `npm run dev` and visit http://localhost:3000.
+5. Sign up, add income and expenses, and open `/dashboard` to see the chart.
+
+## Checks
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run test:insights  # pure finance calculations, Node.js 22
+npm run lint           # requires npm ci
+npx tsc --noEmit       # requires npm ci
+npm run build          # requires npm ci and valid configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The `/api/health` endpoint additionally checks the live MongoDB connection.
+For end-to-end login and transaction testing, provide a working MongoDB
+instance and the environment variables above.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Register, log in, and log out (HTTP-only cookie, JWT, bcrypt password hashing)
+- Create, edit, delete, and view personal income/expense transactions
+- Filter transaction history by type, category, and relative date range
+- View all-time income, expenses, and balance
+- **Week 3:** See an all-time, accessible expense-category breakdown with
+  percentage bars and totals. The chart updates when transactions change.
 
-## Learn More
+Amounts are currently presented as **NGN (₦)**, carried forward from the
+original application. Currency selection/multicurrency support is not yet
+implemented; the team should confirm their target currency before release.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `../WEEK3_CHANGELOG.md` for details of the sprint increment, test results,
+and next steps.
